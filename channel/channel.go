@@ -62,6 +62,7 @@ type Channel interface {
 	BytesBeforeUnwritable() int64
 	BytesBeforeWritable() int64
 
+	// Pipeline is a *list.List of *channel.Handler
 	Pipeline() *list.List
 
 	Read() Channel
