@@ -63,9 +63,6 @@ func NewDefaultChannelId() Id {
 
 	// random
 	i = id.writeUint32(i, rand.Uint32())
-	if i != len(id.data) {
-		panic(fmt.Sprint("incorrect len: ", i, " | ", len(id.data)))
-	}
 
 	id.hashCode = util.HashCode(id.data)
 
@@ -105,9 +102,6 @@ func (id *defaultChannelId) newLongValue() string {
 	i = id.appendHexDumpField(buf, i, sequenceLen)
 	i = id.appendHexDumpField(buf, i, timestampLen)
 	i = id.appendHexDumpField(buf, i, randomLen)
-	if i != len(id.data) {
-		panic(fmt.Sprint("incorrect len: ", i, " | ", len(id.data)))
-	}
 	s := buf.String()
 	return s[:len(s)-1]
 }
