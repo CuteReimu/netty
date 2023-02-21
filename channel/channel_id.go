@@ -2,7 +2,6 @@ package channel
 
 import (
 	"encoding/binary"
-	"fmt"
 	"github.com/CuteReimu/netty/util"
 	"math/rand"
 	"os"

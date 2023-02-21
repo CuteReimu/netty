@@ -12,7 +12,7 @@ const (
 
 // BestAvailableMac obtains the best MAC address found on local network interfaces.
 // Generally speaking, an active network interface used on public networks is better than a local network interface.
-// Return null if no MAC can be found.
+// Return nil if no MAC can be found.
 func BestAvailableMac() net.HardwareAddr {
 	interfaces, err := net.Interfaces()
 	if err != nil {
